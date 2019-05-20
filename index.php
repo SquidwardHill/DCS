@@ -1,25 +1,40 @@
-<?php if ( have_posts() ) : ?>
+<?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package WordPress
+ * @subpackage DCS
+ * @since 1.0.0
+ */
+
+get_header();
+?>
+
 <?php while ( have_posts() ) : the_post(); ?>
-  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="post-header">
-       <div class="date"><?php the_time( 'M j y' ); ?></div>
-       <h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-       <div class="author"><?php the_author(); ?></div>
-    </div><!--end post header-->
-    <div class="entry clear">
-       <?php if ( function_exists( 'add_theme_support' ) ) the_post_thumbnail(); ?>
-       <?php the_content(); ?>
-       <?php edit_post_link(); ?>
-       <?php wp_link_pages(); ?> </div>
-    <!--end entry-->
-    <div class="post-footer">
-       <div class="comments"><?php comments_popup_link( 'Leave a Comment', '1 Comment', '% Comments' ); ?></div>
-    </div><!--end post footer-->
-    </div><!--end post-->
-<?php endwhile; /* rewind or continue if all posts have been fetched */ ?>
-    <div class="navigation index">
-       <div class="alignleft"><?php next_posts_link( 'Older Entries' ); ?></div>
-       <div class="alignright"><?php previous_posts_link( 'Newer Entries' ); ?></div>
-    </div><!--end navigation-->
-<?php else : ?>
-<?php endif; ?>
+  <article class="<?php post_class(); ?>" id="post-<?php the_ID(); ?>">
+    <h2 class="entry-title"><?php the_title(); ?></h2>
+    <?php if ( !is_page() ):?>
+      <section class="entry-meta">
+      <p>Posted on <?php the_date();?> by <?php the_author();?></p>
+      </section>
+    <?php endif; ?>
+    <section class="entry-content">
+      <?php the_content(); ?>
+    </section>
+    <section class="entry-meta"><?php if ( count( get_the_category() ) ) : ?>
+      <span class="category-links">
+        Posted under: <?php echo get_the_category_list( ', ' ); ?>
+      </span>
+    <?php endif; ?></section>
+  </article>
+<?php endwhile; ?>
+
+<?php
+get_footer();
