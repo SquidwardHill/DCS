@@ -6,7 +6,9 @@ Version: 1.0
 Author: Sydney Hill 
 Author URI: http://sydneyhill.io
 */
-
+:root {
+  margin-top: 0px !important;
+}
 :root {
     --spacing: 32px;
     --headerHeight: 100vh; }

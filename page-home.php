@@ -55,15 +55,15 @@ get_header(); ?>
         <div class="section__wrapper">
           <div class="row">
             <div class="col -half">
-              <div class="section__imageBox"><img class="section__image" src="/wp-content/uploads/images/reach-out.jpg" alt=""></div>
+              <div class="section__imageBox"><img class="section__``image" src="/wp-content/uploads/images/reach-out.jpg" alt=""></div>
             </div>
             <div class="col -half -center">
               <div class="section__content">
                 <div class="wysiwyg">
-                  <h2>We speak Salesforce, and we’re here to translate.</h2>
-                  <p>We partner with you to develop Salesforce solutions on your terms. At DCS, no project is too menial and no question is too granular.</p>
-                  <p>We are our clients’ champions, ready to roll up our sleeves and problem-solve to best support your team and make Salesforce work for you.</p><a class="section__link" href="./contact.html">Reach out to us
-                    <svg class="section__linkIcon arrow">
+                  <h2><?php the_field('reach_out_title'); ?></h2>
+                  <?php the_field('reach_out_body'); ?>
+                  <a class="section__link" href="./contact.html">Reach out to us
+                    <svg class="section__linkIcon arrow">`
                       <use xlink:href="#arrow"></use>
                     </svg></a>
                 </div>
@@ -78,8 +78,8 @@ get_header(); ?>
             <div class="col -half -center">
               <div class="section__content">
                 <div class="wysiwyg">
-                  <h2>Let’s work out your workflow.</h2>
-                  <p>Get clear guidance from specialized team members equipped with industry knowledge and extensive in-house and consulting experience in the Salesforce ecosystem. Whether you’re installing Salesforce for the first time or revamping an existing implementation, DCS is up to the task.</p><a class="section__link" href="./industries.html">Explore our Industries
+                  <h2><?php the_field('industries_title'); ?></h2>
+                  <p><?php the_field('industries_body'); ?></p><a class="section__link" href="./industries.html">Explore our Industries
                     <svg class="section__linkIcon arrow">
                       <use xlink:href="#arrow"></use>
                     </svg></a>

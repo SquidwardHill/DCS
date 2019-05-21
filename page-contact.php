@@ -17,9 +17,8 @@ get_header();?>
             <div class="col -half -center">
               <div class="section__content">
                 <div class="wysiwyg">
-                  <h2>Reach out.</h2>
-                  <p>Contact us at <a href='mailto:hello@dupontcirclesolutions.com'>hello@dupontcirclesolutions.com</a> to get started.</p>
-                  <p>One of our partners will get in touch with you.</p><a class="section__button" href="mailto:hello@dupontcirclesolutions.com">Email Us</a>
+                  <h2><?php the_field('reach_out_title'); ?></h2>
+                  <?php the_field('reach_out_body'); ?><a class="section__button" href="mailto:hello@dupontcirclesolutions.com">Email Us</a>
                 </div>
               </div>
             </div>
@@ -40,9 +39,8 @@ get_header();?>
             <div class="col -half -center">
               <div class="section__content">
                 <div class="wysiwyg">
-                  <h2>A brilliant place to work.</h2>
-                  <p>DCS is on the lookout for the best and brightest in the Salesforce space.</p>
-                  <p>Check out current job openings:</p><a class="section__link" href="https://www.linkedin.com/jobs/search?f_C=15212683&amp;pageNum=0&amp;position=1" target="_blank">Explore jobs at DCS
+                  <h2><?php the_field('work_title'); ?> </h2>
+                  <?php the_field('work_body'); ?> <a class="section__link" href="https://www.linkedin.com/jobs/search?f_C=15212683&amp;pageNum=0&amp;position=1" target="_blank">Explore jobs at DCS
                     <svg class="section__linkIcon arrow">
                       <use xlink:href="#arrow"></use>
                     </svg></a>

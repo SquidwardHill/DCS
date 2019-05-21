@@ -17,9 +17,9 @@ get_header();?>
             <div class="col -half -center">
               <div class="section__content">
                 <div class="wysiwyg">
-                  <h2>We’re a team of Salesforce specialists that love what we do.</h2>
-                  <p>We strategically assemble the people with the right skills and experience to take each project to the finish line. Our entire team is stateside and fully committed to supporting our clients every step of the way.</p>
-                  <p>DCS is a woman-owned business dedicated to fostering our employees’ growth and advancement.</p><a class="section__link" href="https://www.linkedin.com/jobs/search?f_C=15212683&amp;pageNum=0&amp;position=1" target="_blank">Browse our current openings
+                  <h2><?php the_field('team_title'); ?></h2>
+                  <?php the_field('team_body'); ?>
+                  <a class="section__link" href="https://www.linkedin.com/jobs/search?f_C=15212683&amp;pageNum=0&amp;position=1" target="_blank">Browse our current openings
                     <svg class="section__linkIcon arrow">
                       <use xlink:href="#arrow"></use>
                     </svg></a>

@@ -23,9 +23,4 @@ function add_file_types_to_uploads($file_types){
 	}
 add_action('upload_mimes', 'add_file_types_to_uploads');
 
-if ( is_home() ) {
-	$navTheme = "dark";
-}
-else {
-	$navTheme = "light";
-}
+

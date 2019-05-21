@@ -16,8 +16,8 @@ get_header();?>
             <div class="col -half -center">
               <div class="section__content">
                 <div class="wysiwyg">
-                  <h2>Mobilize and&#32;<br />motivate.</h2>
-                  <p>Employing standard Salesforce functionality, we can help to centralize your information across all of your organization's efforts. From fundraising and donor cultivation to program, event, and volunteer management, we can help you to better understand, engage, and mobilize your base.</p>
+                  <h2><?php the_field('mobilize_title'); ?></h2>
+                  <?php the_field('mobilize_body'); ?>
                 </div>
               </div>
             </div>
@@ -36,16 +36,16 @@ get_header();?>
             <div class="col -half">
               <div class="section__content">
                 <div class="wysiwyg">
-                  <h3>Put your mission first.</h3>
-                  <p>We build systems that do the hard work for you, freeing up your team to build relationships and bring awareness to your cause.</p>
+                  <h3><?php the_field('mission_title'); ?></h3>
+                  <?php the_field('mission_body'); ?>
                 </div>
               </div>
             </div>
             <div class="col -half">
               <div class="section__content">
                 <div class="wysiwyg">
-                  <h3>Make the numbers count.</h3>
-                  <p>Our Salesforce expertise and fundraising backgrounds enable us to bring compelling metrics to the forefront, providing the right data to tell your story of impact.</p>
+                  <h3><?php the_field('metrics_title'); ?></h3>
+                  <?php the_field('metrics_body'); ?>
                 </div>
               </div>
             </div>

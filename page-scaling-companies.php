@@ -16,8 +16,8 @@ get_header();?>
 	            <div class="col -half -center">
 	              <div class="section__content">
 	                <div class="wysiwyg">
-	                  <h2>We’ll help you stay on track.</h2>
-	                  <p>We know which metrics matter for sales, marketing, and customer success teams. We’ll help you implement the right tracking tools so you can keep the pulse on your pipeline, outbound marketing efforts, renewals, and SaaS metrics.</p>
+	                  <h2><?php the_field('tracking_title'); ?></h2>
+	                  <?php the_field('tracking_body'); ?>
 	                </div>
 	              </div>
 	            </div>
@@ -36,19 +36,19 @@ get_header();?>
 	            <div class="col -half">
 	              <div class="section__content">
 	                <div class="wysiwyg">
-	                  <h3>We’ll mind your metrics.</h3>
-	                  <p>Whether you are currently working through a messy Salesforce set-up or migrating to Salesforce for the first time, we can help you maximize the platform to track all of the key metrics relevant to your organization and customers.</p>
-	                  <p>From SaaS metrics like churn, upsell, ARR, and  MRR to cohort analysis, we understand how to get you the information you need to measure your success.</p><img src="/wp-content/uploads/images/bar-diagram.svg" alt="">
+	                  <h3><?php the_field('metrics_title'); ?></h3>
+										<?php the_field('metrics_body'); ?>
+	                 <img src="/wp-content/uploads/images/bar-diagram.svg" alt="">
 	                </div>
 	              </div>
 	            </div>
 	            <div class="col -half">
 	              <div class="section__content">
 	                <div class="wysiwyg">
-	                  <h3>We’ve been on your side of the table.</h3>
-	                  <p>Our team includes former in-house administrators who have worked on implementations for clients of every size—from two-person startups working out of their garages to companies going through the IPO process.</p>
-	                  <h3>Our solutions are tried and true.</h3>
-	                  <p>Utilizing industry best practices and proven playbooks, we set up easy-to-use, data-rich systems that leverage the best tools in the Salesforce ecosystem to track your KPIs and drive your business goals.</p>
+	                  <h3><?php the_field('team_title'); ?></h3>
+										<?php the_field('team_body'); ?>
+	                  <h3>	<?php the_field('solutions_title'); ?></h3>
+										<?php the_field('solutions_body'); ?>
 	                </div>
 	              </div>
 	            </div>

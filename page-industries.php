@@ -21,8 +21,8 @@ get_header();?>
             <div class="col -half -center">
               <div class="section__content">
                 <div class="wysiwyg">
-                  <h2>We provide expert tailored solutions to your needs</h2>
-                  <p>Through our work with leading technology companies, venture capital and private equity firms, associations, and non-profits and foundations, we’ve garnered industry-specific insights and cemented Salesforce success strategies that support growth.</p>
+                  <h2><?php the_field('solutions_title'); ?></h2>
+                  <?php the_field('solutions_body'); ?>
                 </div>
               </div>
             </div>

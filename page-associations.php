@@ -16,8 +16,8 @@ get_header();?>
 	            <div class="col -half -center">
 	              <div class="section__content">
 	                <div class="wysiwyg">
-	                  <h2>Let’s organize&#32;<br />your operations.</h2>
-	                  <p>We can help you leverage Salesforce to track your association’s operations and utilize Salesforce Communities to help power an Association Management Software platform that provides an external login portal for your members.</p>
+	                  <h2><?php the_field('operations_title'); ?></h2>
+										<?php the_field('operations_body'); ?> 
 	                </div>
 	              </div>
 	            </div>
@@ -36,8 +36,8 @@ get_header();?>
 	            <div class="col -half">
 	              <div class="section__content">
 	                <div class="wysiwyg">
-	                  <h3>Unite your community.</h3>
-	                  <p>Using Salesforce, we help associations bring their memberships together and create a community, giving members a place to connect and engage.</p>
+	                  <h3><?php the_field('community_title'); ?></h3>
+	                  <?php the_field('community_body'); ?>
 	                </div>
 	              </div>
 	            </div>
