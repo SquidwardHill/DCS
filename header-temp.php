@@ -59,19 +59,26 @@
               </svg></a>
             <p class="menu__logoTagline">Salesforce problems? We’ve&nbsp;got&nbsp;you&nbsp;covered.</p>
           </div>
-          <!-- <nav class="menu__nav">
+          <nav class="menu__nav">
             <button class="menu__toggle" aria-haspopup="true" aria-expanded="false"><span class="menu__toggle-box"><span class="menu__toggle-inner"></span></span></button>
-            
-          </nav> -->
-          <?php wp_nav_menu( array( 
-            'theme_location' => 'header-menu', 
-            'container'       => 'nav',
-            'container_class' => 'menu__nav',
-            'items_wrap'      => '<ul id="%1$s" class="menu__navLinks">%3$s</ul>', 
-            
-            ) ); ?>
+            <ul class="menu__navLinks">
+              <li class="menu__navLinkItem -dropdown" id="dropdown"><a class="menu__navLink" href="./industries">Industries
+                  <svg class="icon caret">
+                    <use xlink:href="#caret"></use>
+                  </svg></a>
+                <ul class="menu__subLinks">
+                      <li class="menu__subLinkItem"><a class="menu__subLink" href="./scaling-companies">Scaling Companies</a></li>
+                      <li class="menu__subLinkItem"><a class="menu__subLink" href="./venture-capital-and-private-equity-firms">Venture Capital + Private Equity Firms</a></li>
+                      <li class="menu__subLinkItem"><a class="menu__subLink" href="./associations">Associations</a></li>
+                      <li class="menu__subLinkItem"><a class="menu__subLink" href="./non-profits-and-foundations">Non-profits + Foundations</a></li>
+                </ul>
+              </li>
+                  <li class="menu__navLinkItem"><a class="menu__navLink" href="./team">Team</a></li>
+                  <li class="menu__navLinkItem"><a class="menu__navLink" href="./contact">Contact</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
-    
+    <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container_class' => 'menu' ) ); ?>
 

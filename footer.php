@@ -25,7 +25,14 @@
               <p class="footer__tagline">Salesforce problems? We’ve&nbsp;got&nbsp;you&nbsp;covered.</p>
             </div>
             <div class="footer__box">
-              <div class="footer__logos"><img class="footer__logo" src="/wp-content/uploads/images/footer-logo.svg" alt=""><img class="footer__logo" src="/wp-content/uploads/images/AME_partner_badge.svg" alt=""></div>
+            <div class="footer__logos">
+              <?php while( have_rows('footer_badges', 'option') ): the_row(); 
+                // vars
+                $image = get_sub_field('badge_icon');
+                ?>
+                <img class="footer__logo" src="<?php echo $image; ?>"/>
+              <?php endwhile; ?>
+              </div>
             </div>
           </div>
           <div class="col -oneThirds -mobileMargin">

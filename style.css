@@ -1545,7 +1545,7 @@ Author URI: http://sydneyhill.io
         .-dropdown:hover .menu__subLinks {
           background-color: #504951; } }
   
-  .menu__subLink {
+  .menu__subLinkItem a {
     font-family: 'jaf-facitweb', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -1558,11 +1558,11 @@ Author URI: http://sydneyhill.io
     margin-top: -16px;
     padding: 16px calc(var(--spacing) * 1.5);
     text-decoration: none; }
-    .menu__subLink:hover {
+    .menu__subLinkItem:hover {
       color: #f8f8f8;
       background-color: #3b343c; }
     @media (min-width: 768px) {
-      .menu__subLink {
+      .menu__subLinkItem a {
         margin-top: 0;
         padding: 32px var(--spacing);
         color: #f8f8f8;
