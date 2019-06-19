@@ -3,18 +3,20 @@
  * DCS functions and definitions
  *
 
-/**
- * Enqueue scripts and styles
- */
+/* Enqueue scripts and styles */
 function dcs_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri(), array());
 	wp_enqueue_script( 'bundle', '/wp-content/themes/DCS/assets/js/bundle.js', array());
 }
 add_action( 'wp_enqueue_scripts', 'dcs_scripts' );
 
-/**
- * Enable SVGs
- */
+/*Add support for post thumbnails*/
+add_theme_support( 'post-thumbnails' );
+
+/* Global Variables */
+global $data_industry; 
+
+/* Enable SVGs */
 function add_file_types_to_uploads($file_types){
 	$new_filetypes = array();
 	$new_filetypes['svg'] = 'image/svg+xml';
@@ -89,3 +91,4 @@ function footer_image_badge_class($class, $id, $align, $size) {
     return $class;
 }
 add_filter('get_image_tag_class', 'footer_image_badge_class', 10, 4 );
+

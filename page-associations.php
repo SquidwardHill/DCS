@@ -5,12 +5,17 @@
  */
 
 get_header();?>
-	<?php
-    get_template_part('template-parts/headers/associations');
-    ?>
+<?php
+get_template_part('template-parts/headers/associations');
+?>
+
+<?php
+/* page data industry var */
+$data_industry = "associations";
+?>
 <main id="main">
     <?php while (have_posts()): the_post();?>
-	    <section class="section" data-industry="associations">
+	    <section class="section" data-industry="<?php echo $data_industry; ?>">
 	        <div class="section__wrapper">
 	          <div class="row">
 	            <div class="col -half -center">
@@ -48,8 +53,11 @@ get_header();?>
 	            </div>
 	          </div>
 	        </div>
-	      </section>
-	      <section class="section" data-industry="associations">
+				</section>
+				<?php
+				include( locate_template( 'template-parts/key-tools.php', false, false ) ); 
+				?>
+	      <!-- <section class="section" data-industry="associations">
 	        <div class="section__wrapper">
 	          <div class="section__content">
 	            <h3 class="section__title">Key Tools</h3>
@@ -82,7 +90,7 @@ get_header();?>
 	            </div>
 	          </div>
 	        </div>
-	      </section>
+	      </section> -->
 	      <section class="section -white">
 	        <div class="section__wrapper">
 	          <div class="section__content">
@@ -92,9 +100,7 @@ get_header();?>
 	          </div>
 	        </div>
 	        </section>
-	    <?php
-        get_template_part('template-parts/cta');
-        ?>
+	    <?php get_template_part('template-parts/cta'); ?>
 	    <?php endwhile; // end of the loop. ?>
 </main><!-- #primary -->
 

@@ -10106,21 +10106,21 @@ function activePage() {
 } // Enable toggling menu hamburger
 
 
-var initMenuToggle = function initMenuToggle() {
-  var menuToggle = document.querySelector('.menu__toggle');
-  menuToggle.addEventListener('click', function (e) {
-    // e.preventDefault();
-    e.stopPropagation();
+// var initMenuToggle = function initMenuToggle() {
+//   var menuToggle = document.querySelector('.menu__toggle');
+//   menuToggle.addEventListener('click', function (e) {
+//     // e.preventDefault();
+//     e.stopPropagation();
 
-    if (body.dataset.state === '' || body.dataset.state === undefined) {
-      expandMenu();
-      menuToggle.setAttribute('aria-expanded', true);
-    } else {
-      collapseMenu();
-      menuToggle.setAttribute('aria-expanded', false);
-    }
-  });
-}; // Set menu to fixed
+//     if (body.dataset.state === '' || body.dataset.state === undefined) {
+//       expandMenu();
+//       menuToggle.setAttribute('aria-expanded', true);
+//     } else {
+//       collapseMenu();
+//       menuToggle.setAttribute('aria-expanded', false);
+//     }
+//   });
+// }; // Set menu to fixed
 
 
 function fixedMenu() {
@@ -10160,12 +10160,12 @@ function fixedMenu() {
   }, 150);
 }
 
-function menuControls() {
-  activePage();
-  fixedMenu();
-  updateMenu();
-  initMenuToggle();
-}
+// function menuControls() {
+//   activePage();
+//   fixedMenu();
+//   updateMenu();
+//   initMenuToggle();
+// }
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -10485,7 +10485,7 @@ function main() {
   var checkFuncs = [enter(viewport$$1), parallax(viewport$$1)]; // see what is in view
 
   inview(checkFuncs);
-  menuControls();
+//   // menuControls();
   header();
   team();
 }

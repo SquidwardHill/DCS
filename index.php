@@ -14,27 +14,32 @@
  * @since 1.0.0
  */
 
-get_header();
-?>
+get_header(); ?>
+  <?php
+    if ( is_home() ) {
+      get_template_part( 'template-parts/headers/insights');
+    }
+	?>
+<main id="main">
+  <section class="section" data-state="in-view">
+  	<div class="section__content">
+    <?php if ( have_posts() ) : ?>
+    <?php
+    // Start the loop.
+    while ( have_posts() ) :
+      the_post();
+      get_template_part( 'template-parts/content/content', get_post_format() );
 
-<?php while ( have_posts() ) : the_post(); ?>
-  <article class="<?php post_class(); ?>" id="post-<?php the_ID(); ?>">
-    <h2 class="entry-title"><?php the_title(); ?></h2>
-    <?php if ( !is_page() ):?>
-      <section class="entry-meta">
-      <p>Posted on <?php the_date();?> by <?php the_author();?></p>
-      </section>
-    <?php endif; ?>
-    <section class="entry-content">
-      <?php the_content(); ?>
-    </section>
-    <section class="entry-meta"><?php if ( count( get_the_category() ) ) : ?>
-      <span class="category-links">
-        Posted under: <?php echo get_the_category_list( ', ' ); ?>
-      </span>
-    <?php endif; ?></section>
-  </article>
-<?php endwhile; ?>
+      // End the loop.
+    endwhile;
+    // If no content, include the "No posts found" template.
+    else :
+    get_template_part( 'template-parts/content', 'none' );
 
-<?php
-get_footer();
+    endif;
+    ?>
+    </div>
+  </section>
+</main><!-- #primary -->
+
+<?php get_footer(); ?>
