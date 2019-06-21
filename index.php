@@ -14,32 +14,40 @@
  * @since 1.0.0
  */
 
-get_header(); ?>
-  <?php
-    if ( is_home() ) {
-      get_template_part( 'template-parts/headers/insights');
-    }
-	?>
+get_header();?>
+<?php
+if (is_home()) {
+    get_template_part('template-parts/headers/insights');
+}
+?>
 <main id="main">
   <section class="section" data-state="in-view">
   	<div class="section__content">
-    <?php if ( have_posts() ) : ?>
-    <?php
-    // Start the loop.
-    while ( have_posts() ) :
-      the_post();
-      get_template_part( 'template-parts/content/content', get_post_format() );
+      <div class="posts">
 
-      // End the loop.
-    endwhile;
-    // If no content, include the "No posts found" template.
-    else :
-    get_template_part( 'template-parts/content', 'none' );
+        <?php if (have_posts()): ?>
+        <?php
+          // Start the loop.
+          while (have_posts()):
+              the_post();
+              get_template_part('template-parts/content/content', get_post_format());
 
-    endif;
-    ?>
+              // End the loop.
+          endwhile;?>
+        <div class="pagination">
+           <div class="nav-previous alignleft"><?php previous_posts_link('Older posts');?></div>
+           <div class="nav-next alignright"><?php next_posts_link('Newer posts');?></div>
+        </div>
+
+          <?php else:
+              get_template_part('template-parts/content', 'none');
+          endif;?>
+
+      </div>
+
+       <?php get_template_part('template-parts/cta');?>
     </div>
   </section>
 </main><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php get_footer();?>

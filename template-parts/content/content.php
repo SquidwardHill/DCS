@@ -8,65 +8,33 @@
  */
 ?>
 
-	<div class="row">
-		<div class="col">
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
-			<span class="sticky-post"><?php _e( 'Featured', 'DCS' ); ?></span>
-		<?php endif; ?>
+<div class="row">
+	<div class="col">
+		<article class="post" id="post-<?php the_ID();?>" <?php post_class();?>>
+			<div class="post__thumb">
+				<?php if (has_post_thumbnail()) {the_post_thumbnail();}?>
+			</div>
+			<div class="post__right">
+				<div class="post__content">
+					<h3><?php the_title(); ?></h3>
+					<p> <?php echo get_the_excerpt(); ?> </p>
+					
+					<div class="post__cta">
+						<a class="post__link"href="<? echo esc_url( get_permalink()) ?>">
+							<p>Continue Reading
+							<svg class="post__linkIcon arrow">
+								<use xlink:href="#arrow"></use>
+							</svg>
+							</p>
+						</a>
+					</div>
 
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-	</header><!-- .entry-header -->
-
-	<div class="thumb">
-		<?php 
-			if ( has_post_thumbnail() ) {
-				the_post_thumbnail();
-			} 
-		?>
+				</div>
+			</div>
+		</article><!-- #post-<?php the_ID();?> -->
 	</div>
+</div>
 
-	<div class="entry-content">
-		<?php
-			/* translators: %s: Name of current post */
-			the_content(
-				sprintf(
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'DCS' ),
-					get_the_title()
-				)
-			);
 
-			wp_link_pages(
-				array(
-					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'DCS' ) . '</span>',
-					'after'       => '</div>',
-					'link_before' => '<span>',
-					'link_after'  => '</span>',
-					'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'DCS' ) . ' </span>%',
-					'separator'   => '<span class="screen-reader-text">, </span>',
-				)
-			);
-			?>
-	</div><!-- .entry-content -->
-<p>hello</p>
-	<footer class="entry-footer">
-		<?php 
-		get_post_meta( $post_id, $key = '', $single = false ) ?>
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'DCS' ),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
-	
-		</div>
-	</div>
+
 
